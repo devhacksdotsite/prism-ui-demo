@@ -7,6 +7,9 @@ import {
   PrTabs, PrChip, PrBreadcrumb,
 } from 'prism-ui'
 
+declare const __PRISM_VERSION__: string
+const version = __PRISM_VERSION__
+
 // State
 const contactName = ref('')
 const contactEmail = ref('')
@@ -62,7 +65,7 @@ const navLinks = [
           <span class="text-xl font-bold">
             <span class="text-pink">P</span><span class="text-purple">r</span><span class="text-blue">i</span><span class="text-mint">s</span><span class="text-coral">m</span>
           </span>
-          <PrBadge value="v0.1" color="purple" />
+          <PrBadge :value="`v${version}`" color="purple" />
         </div>
         <div class="hidden md:flex items-center gap-6">
           <a v-for="link in navLinks" :key="link.label" :href="link.url" class="text-sm text-text-muted hover:text-text transition-colors">{{ link.label }}</a>
@@ -304,8 +307,8 @@ const navLinks = [
           <PrInput v-model="contactEmail" placeholder="Email address" />
           <PrSelect v-model="contactPlan" :options="planOptions" option-label="label" option-value="value" placeholder="Interested in..." />
           <PrTextarea v-model="contactMessage" placeholder="Tell us about your project..." :maxlength="500" :rows="4" />
-          <PrCheckbox v-model="newsletter" label="Subscribe to product updates" />
-          <PrButton label="Send Message" color="purple" size="lg" />
+          <div><PrCheckbox v-model="newsletter" label="Subscribe to product updates" /></div>
+          <div><PrButton label="Send Message" color="purple" size="lg" class="w-full" /></div>
         </div>
       </div>
     </section>
