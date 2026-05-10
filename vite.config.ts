@@ -6,6 +6,7 @@ import { readFileSync } from 'fs'
 const prismPkg = JSON.parse(readFileSync('./node_modules/prism-ui/package.json', 'utf-8'))
 
 export default defineConfig({
+  base: '/prism-ui-demo/',
   plugins: [vue(), tailwindcss()],
   define: {
     __PRISM_VERSION__: JSON.stringify(prismPkg.version),
