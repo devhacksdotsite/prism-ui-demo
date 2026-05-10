@@ -88,8 +88,9 @@ const navLinks = [
         <div class="mt-12 flex justify-center gap-6 text-sm text-text-muted">
           <span class="flex items-center gap-2"><PrBadge value="24" color="pink" /> Components</span>
           <span class="flex items-center gap-2"><PrBadge value="7" color="blue" /> Colors</span>
-          <span class="flex items-center gap-2"><PrBadge value="0" color="mint" /> Dependencies*</span>
+          <span class="flex items-center gap-2"><PrBadge value="0" color="mint" /> Runtime deps</span>
         </div>
+        <p class="mt-3 text-xs text-text-muted">Vue 3 &amp; PrimeVue 4 are peer dependencies — not bundled.</p>
       </div>
     </section>
 
