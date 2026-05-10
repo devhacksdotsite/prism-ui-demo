@@ -2,6 +2,10 @@
 
 A static landing page showcasing [prism-ui](https://github.com/devhacksdotsite/prism-ui) components in a real-world context.
 
+- 🌐 [Live Site](https://devhacksdotsite.github.io/prism-ui-demo/)
+- 📖 [Storybook](https://devhacksdotsite.github.io/prism-ui/)
+- 👤 [Author](https://jesse-salinas.com/)
+
 ## Setup
 
 ```bash
