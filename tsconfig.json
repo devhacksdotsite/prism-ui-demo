@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "prism-ui": ["../prism-ui/src/index.ts"],
+      "prism-ui/*": ["../prism-ui/src/*"]
+    }
+  },
+  "include": ["src/**/*", "env.d.ts"]
+}
