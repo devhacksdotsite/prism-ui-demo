@@ -18,6 +18,12 @@ watchEffect(() => {
   document.documentElement.setAttribute('data-theme', darkMode.value ? 'dark' : 'light')
 })
 const demoDialogOpen = ref(false)
+const copied = ref('')
+function copyCmd(text: string) {
+  navigator.clipboard.writeText(text)
+  copied.value = text
+  setTimeout(() => copied.value = '', 2000)
+}
 
 const planOptions = [
   { label: 'Starter', value: 'starter' },
@@ -102,13 +108,22 @@ const navLinks = [
         <h2 class="text-3xl font-bold text-center mb-8">Get started in seconds</h2>
         <PrTabs :tabs="docTabs">
           <template #npm>
-            <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 text-sm font-mono text-text-muted">npm install prism-ui vue primevue</code>
+            <div class="relative">
+              <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 pr-16 text-sm font-mono text-text-muted">npm install prism-ui vue primevue</code>
+              <button class="absolute top-3 right-3 text-xs px-2 py-1 rounded bg-purple/10 text-purple hover:bg-purple/20 transition-colors cursor-pointer" @click="copyCmd('npm install prism-ui vue primevue')">{{ copied === 'npm install prism-ui vue primevue' ? 'Copied!' : 'Copy' }}</button>
+            </div>
           </template>
           <template #pnpm>
-            <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 text-sm font-mono text-text-muted">pnpm add prism-ui vue primevue</code>
+            <div class="relative">
+              <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 pr-16 text-sm font-mono text-text-muted">pnpm add prism-ui vue primevue</code>
+              <button class="absolute top-3 right-3 text-xs px-2 py-1 rounded bg-purple/10 text-purple hover:bg-purple/20 transition-colors cursor-pointer" @click="copyCmd('pnpm add prism-ui vue primevue')">{{ copied === 'pnpm add prism-ui vue primevue' ? 'Copied!' : 'Copy' }}</button>
+            </div>
           </template>
           <template #yarn>
-            <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 text-sm font-mono text-text-muted">yarn add prism-ui vue primevue</code>
+            <div class="relative">
+              <code class="block bg-surface-1 border border-surface-2 rounded-lg p-4 pr-16 text-sm font-mono text-text-muted">yarn add prism-ui vue primevue</code>
+              <button class="absolute top-3 right-3 text-xs px-2 py-1 rounded bg-purple/10 text-purple hover:bg-purple/20 transition-colors cursor-pointer" @click="copyCmd('yarn add prism-ui vue primevue')">{{ copied === 'yarn add prism-ui vue primevue' ? 'Copied!' : 'Copy' }}</button>
+            </div>
           </template>
         </PrTabs>
       </div>
