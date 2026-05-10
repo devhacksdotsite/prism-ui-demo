@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import {
   PrButton, PrInput, PrTextarea, PrSelect, PrCheckbox,
   PrToggle, PrBadge, PrTag, PrAvatar, PrCard, PrDivider,
@@ -14,6 +14,9 @@ const contactMessage = ref('')
 const contactPlan = ref(null)
 const newsletter = ref(false)
 const darkMode = ref(false)
+watchEffect(() => {
+  document.documentElement.setAttribute('data-theme', darkMode.value ? 'dark' : 'light')
+})
 const demoDialogOpen = ref(false)
 
 const planOptions = [
