@@ -82,8 +82,8 @@ const navLinks = [
           A vibrant pastel design system with 24 production-ready components. Accessible, themeable, and delightful.
         </p>
         <div class="flex justify-center gap-4 flex-wrap">
-          <PrButton label="Browse Components" color="purple" size="lg" />
-          <PrButton label="View on GitHub" color="purple" variant="outline" size="lg" />
+          <a href="https://devhacksdotsite.github.io/prism-ui/?path=/story/design-system-overview--overview" target="_blank"><PrButton label="Browse Components" color="purple" size="lg" /></a>
+          <a href="https://github.com/devhacksdotsite/prism-ui" target="_blank"><PrButton label="View on GitHub" color="purple" variant="outline" size="lg" /></a>
         </div>
         <div class="mt-12 flex justify-center gap-6 text-sm text-text-muted">
           <span class="flex items-center gap-2"><PrBadge value="24" color="pink" /> Components</span>
